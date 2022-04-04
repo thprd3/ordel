@@ -1,0 +1,81 @@
+/* https://www.schemecolor.com/purple-and-beige.php */
+
+:root{
+    --purple: #9575b1;
+    --beige: #dfc99a;
+    --green: #aaebb8;
+    --yellow: #f5f3a3;
+    --grey: #e7e7e7;
+}
+
+button{
+    background-color: none;
+}
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #F5E7D1;
+    color: #8B72BE;
+}
+
+h1 {
+    text-align: center;
+    font-size: 500%;
+   }
+
+#game-board {
+display: flex;
+align-items: center;
+flex-direction: column;
+}
+
+.letter-box {
+border: 2px solid #CAB9D9;
+border-radius: 3px;
+margin: 2px;
+font-size: 2.5rem;
+font-weight: 700;
+height: 3rem;
+width: 3rem;
+display: flex;
+justify-content: center;
+align-items: center;
+text-transform: uppercase;
+background-color: #F5D9C8;
+}
+
+.filled-box {
+border: 2px solid #CAB9D9;
+}
+
+.letter-row {
+display: flex;
+}
+
+#keyboard-cont {
+    margin: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  #keyboard-cont div {
+    display: flex;
+  }
+  
+  .second-row {
+    margin: 0.5rem 0;
+  }
+  
+  .keyboard-button {
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 0.5rem;
+    margin: 0 2px;
+    cursor: pointer;
+    text-transform: uppercase;
+    background-color: #F5D9C8;
+    color: #8B72BE;
+    outline: none;
+    border: 2px solid #CAB9D9;
+  }
