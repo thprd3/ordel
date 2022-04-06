@@ -1,9 +1,8 @@
 const WORDS = [ /* ikke inkluder ord med samme bokstav to ganger... */
-    'flour',
-    'måned',
-    'frosk',
-    'kræsj',
-    'flere',
+    'flour','måned','frosk','kræsj','kaldt','lompe','pølse','purke',
+    'laser','lampe','bukse','korps','thale','tramp','gryte','følge',
+    'krise','rumpe','truse','rynke','lunte','måned','hjort','plast',
+    'løfte',
 ]
 
 const NUMBER_OF_GUESSES = 6;
@@ -12,6 +11,7 @@ let currentGuess = [];
 let nextLetter = 0;
 let rightGuessString = WORDS[Math.floor(Math.random() * WORDS.length)]
 console.log(rightGuessString)
+let output = document.getElementById("output");
 
 function initBoard() {
     let board = document.getElementById("game-board");
@@ -134,7 +134,8 @@ function checkGuess () {
     }
 
     if (guessString === rightGuessString) {
-        alert("Gratulerer, du fant ordet!")
+        /*alert("Gratulerer, du fant ordet!")*/        
+        output.innerHTML = "<h2>Gratulerer, du fant ordet!</h2>";
         guessesRemaining = 0
         return
     } else {
@@ -143,8 +144,8 @@ function checkGuess () {
         nextLetter = 0;
 
         if (guessesRemaining === 0) {
-            alert("Du har brukt alle forsøkene... Game over!")
-            alert(`Ordet var: "${rightGuessString}"`)
+            output.innerHTML = "<h2>Du har brukt alle forsøkene..."
+            + `<br>Ordet var: "${rightGuessString}"</h2>`;
         }
     }
 }

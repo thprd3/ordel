@@ -21,7 +21,12 @@ body {
 h1 {
     text-align: center;
     font-size: 500%;
+    margin:10px;
    }
+h2 {
+  font-style: italic;
+  margin:10px;
+}
 
 #game-board {
 display: flex;
