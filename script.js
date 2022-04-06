@@ -2,7 +2,7 @@ const WORDS = [ /* ikke inkluder ord med samme bokstav to ganger... */
     'flour','måned','frosk','kræsj','kaldt','lompe','pølse','purke',
     'laser','lampe','bukse','korps','thale','tramp','gryte','følge',
     'krise','rumpe','truse','rynke','lunte','måned','hjort','plast',
-    'løfte',
+    'løfte','altså','poker'
 ]
 
 const NUMBER_OF_GUESSES = 6;
@@ -144,8 +144,9 @@ function checkGuess () {
         nextLetter = 0;
 
         if (guessesRemaining === 0) {
+            rightGuessString = rightGuessString.toUpperCase();
             output.innerHTML = "<h2>Du har brukt alle forsøkene..."
-            + `<br>Ordet var: "${rightGuessString}"</h2>`;
+            + `<br>Ordet var: <em>"${rightGuessString}"</em></h2>`;
         }
     }
 }
