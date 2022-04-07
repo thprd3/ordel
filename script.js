@@ -1,4 +1,4 @@
-const WORDS = [ /* ikke inkluder ord med samme bokstav to ganger... */
+const WORDS = [ // vurder tre arrays, difficulties
     'flour','måned','frosk','kræsj','kaldt','lompe','pølse','purke',
     'laser','lampe','bukse','korps','thale','tramp','gryte','følge',
     'krise','rumpe','truse','rynke','lunte','måned','hjort','plast',
@@ -12,6 +12,7 @@ let nextLetter = 0;
 let rightGuessString = WORDS[Math.floor(Math.random() * WORDS.length)]
 console.log(rightGuessString)
 let output = document.getElementById("output");
+let green = '#aaebb8'; let yellow = '#f5f3a3'; let grey = '#e7e7e7';
 
 function initBoard() {
     let board = document.getElementById("game-board");
@@ -103,21 +104,23 @@ function checkGuess () {
         let letterColor = ''
         let box = row.children[i]
         if (currentGuess[i] === rightGuessString[i]){
-            letterColor = '#aaebb8'
+            letterColor = green;
         }
 
         else if (rightGuessString.includes(currentGuess[i])) {
-            letterColor = '#f5f3a3'
+            letterColor = yellow;
         }
         else {
-            letterColor = '#e7e7e7'
+            letterColor = grey;
         }
+
         let delay = 250 * i
-        setTimeout(()=> {
+
+        setTimeout(function(){
             animateCSS(box, 'flipInX')
-            box.style.backgroundColor = letterColor
-            shadeKeyBoard(currentGuess[i], letterColor)
+            box.style.backgroundColor = letterColor;
         }, delay)
+        shadeKeyBoard(currentGuess[i], letterColor);
     }
 
     if (guessString === rightGuessString) {
@@ -145,13 +148,13 @@ function gameOver(){
 }
 function shadeKeyBoard(letter, color) {
     for (const elem of document.getElementsByClassName("keyboard-button")) {
-        if (elem.textContent === letter) {
+        if (elem.textContent == letter) {
             let oldColor = elem.style.backgroundColor
-            if (oldColor === 'green') {
+            if (oldColor == green) {
                 return
             } 
 
-            if (oldColor === 'yellow' && color !== 'green') {
+            if (oldColor == yellow && color !== green) {
                 return
             }
 
