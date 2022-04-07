@@ -80,10 +80,11 @@ function deleteLetter () {
 }
 
 function checkGuess () {
+    // determines what row to check, depending on how many guesses are left. 
     let row = document.getElementsByClassName("letter-row")[6 - guessesRemaining]
     let guessString = ''
-    let rightGuess = Array.from(rightGuessString)
 
+    // adds the individual letters to guessString, forming the complete word guessed
     for (const val of currentGuess) {
         guessString += val
     }
@@ -98,37 +99,30 @@ function checkGuess () {
         return
     } */
 
-    
     for (let i = 0; i < 5; i++) {
         let letterColor = ''
         let box = row.children[i]
-        let letter = currentGuess[i]
-        
-        let letterPosition = rightGuess.indexOf(currentGuess[i])
-        if (currentGuess[i] == rightGuess[i]) {
-            letterColor = '#aaebb8';
-        }
-        else if (currentGuess[i] == currentGuess[0] || currentGuess[i] == currentGuess[1] || currentGuess[i] == currentGuess[2]
-            || currentGuess[i] == currentGuess[3] || currentGuess[i] == currentGuess[4]){
-                letterColor = '#f5f3a3'
-            }
-        else {
-                letterColor = '#e7e7e7'
+        if (currentGuess[i] === rightGuessString[i]){
+            letterColor = '#aaebb8'
         }
 
+        else if (rightGuessString.includes(currentGuess[i])) {
+            letterColor = '#f5f3a3'
+        }
+        else {
+            letterColor = '#e7e7e7'
+        }
         let delay = 250 * i
         setTimeout(()=> {
-            //flip box
             animateCSS(box, 'flipInX')
-            //shade box
             box.style.backgroundColor = letterColor
-            shadeKeyBoard(letter, letterColor)
+            shadeKeyBoard(currentGuess[i], letterColor)
         }, delay)
     }
 
     if (guessString === rightGuessString) {
-        /*alert("Gratulerer, du fant ordet!")*/        
-        output.innerHTML = "<h2>Gratulerer, du fant ordet!</h2>";
+        setTimeout(gameOver()),1250;
+    
         guessesRemaining = 0
         return
     } else {
@@ -143,7 +137,12 @@ function checkGuess () {
         }
     }
 }
-
+function gameOver(){
+    var el = document.createElement("div");
+    el.setAttribute("style","position:fixed;top:50%;left:50%;");
+    el.innerHTML = "<h2>Bra jobba!!</h2>";
+    document.body.appendChild(el);
+}
 function shadeKeyBoard(letter, color) {
     for (const elem of document.getElementsByClassName("keyboard-button")) {
         if (elem.textContent === letter) {
