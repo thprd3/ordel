@@ -7,3 +7,6 @@ improvement: animer keyboard on press
 improvement: kan output dukke opp et annet sted? vil ha one-screen alway 
 -- sykt kult med pop-up foran alt
 improvement: finere alerts v validation fail 
+improvement: footer, header
+
+hvis "sommerprosjekt":
