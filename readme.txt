@@ -1,6 +1,6 @@
-først db, så evt cookies.
+add: først db, så evt cookies.
+add: finere alerts v validation fail 
+add: footer, header
 
-improvement: animer keyboard on press
-improvement: finere alerts v validation fail 
-improvement: footer, header
-
+consider: reset button
+consider: animer keyboard on press
