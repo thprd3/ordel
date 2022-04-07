@@ -104,6 +104,13 @@ display: flex;
   }
 
   @media only screen and (max-width:600px) {
+    #keyboard-cont {
+      margin: 1rem 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width:100%;
+    }
     .keyboard-button{
       font-size: 1rem;
       padding: 15px 10px 15px 10px;
