@@ -135,15 +135,16 @@ function checkGuess () {
 
         if (guessesRemaining === 0) {
             rightGuessString = rightGuessString.toUpperCase();
-            output.innerHTML = "<h2>Du har brukt alle forsøkene..."
-            + `<br>Ordet var: <em>"${rightGuessString}"</em></h2>`;
+            var el = document.createElement("div");
+            el.innerHTML = "<h2>Game over!"
+            + "<br>Ordet var: <em>"+rightGuessString+"</em></h2>";
+            document.body.appendChild(el);
         }
     }
 }
 function gameOver(){
     var el = document.createElement("div");
-    el.setAttribute("style","position:fixed;top:50%;left:50%;");
-    el.innerHTML = "<h2>Bra jobba!!</h2>";
+    el.innerHTML = "<h2>BRA JOBBA!!</h2>";
     document.body.appendChild(el);
 }
 function shadeKeyBoard(letter, color) {
