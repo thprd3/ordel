@@ -1,5 +1,5 @@
 const WORDS = [ // vurder tre arrays, difficulties
-    'flour','måned','frosk','kræsj','kaldt','lompe','pølse','purke',
+    'fluor','måned','frosk','kræsj','kaldt','lompe','pølse','purke',
     'laser','lampe','bukse','korps','thale','tramp','gryte','følge',
     'krise','rumpe','truse','rynke','lunte','måned','hjort','plast',
     'løfte','altså','poker'
