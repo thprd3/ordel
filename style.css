@@ -78,7 +78,7 @@ display: flex;
     margin: 1rem 0;
     display: flex;
     flex-direction: column;
-    align-items:center;
+    align-items: center;
   }
   
   #keyboard-cont div {
@@ -104,26 +104,49 @@ display: flex;
 
   @media only screen and (max-width:500px) {
     #keyboard-cont {
-      margin: 2rem 0;
+      margin: 1rem 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width:100%;
     }
     .keyboard-button{
-      padding: 15px 8px 15px 8px;
-      font-size: 1.1rem;
-      margin: 2px 1px;
+      font-size: 1rem;
+      padding: 20px 9px 20px 9px;
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin: 0 2px;
+      cursor: pointer;
+      text-transform: uppercase;
+      background-color: #F5D9C8;
+      color: #8B72BE;
+      outline: none;
+      border: 2px solid #CAB9D9; 
   }
 }
 
-@media only screen and (min-width:1100px) {
+@media only screen and (min-width:850px) {
   h1,h2 {
     font-size: 4rem;
   }
   #keyboard-cont {
     margin: 3rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width:100%;
   }
   .keyboard-button{
     padding: 20px;
     font-size: 2rem;
+    font-weight: 700;
     margin: 0 2px;
+    cursor: pointer;
+    text-transform: uppercase;
+    background-color: #F5D9C8;
+    color: #8B72BE;
+    outline: none;
+    border: 2px solid #CAB9D9; 
 }
 
 .letter-box {
@@ -134,9 +157,15 @@ display: flex;
   font-weight: 700;
   height: 4.2rem;
   width: 4.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  background-color: #F5D9C8;
   }
 }
 
 .letter-row {
+  display: flex;
   margin:0.2rem;
   }
